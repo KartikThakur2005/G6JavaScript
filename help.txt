@@ -1,0 +1,617 @@
+Question : What is Low level language and high level language ?
+Answer : Low level language : The code in form of 0 and 1
+         High level language : In form of English
+
+Question : What is interpretated and compiled language ?
+Answer : Interpenetrated : Line by line give result
+         Complied : First compile whole code  then give result
+
+Question : What is single threaded language ?
+Answer : One work at one time
+
+Question : What is JavaScript ?
+Answer : JavaScript is a high level, interpretated and single thread language
+
+
+Question : What are variable ?
+Answer : A container in which we can store data
+
+Question : What is let, var and const ?
+Answer : Const - Whose value is not changed
+         let -  we can update but not redeclared  it
+         var - but in var we can do both
+
+
+
+Question : Types of Datatypes ?
+Answer : 1> Primitive  : Which cannot be further divided
+         2> Non Primitive : Array, Object
+
+
+Question : What is difference between == and === ?
+Answer : === is strict equality also check number with datatype
+          == only check value
+
+Question : What is ternary operator ?
+Answer : a > b ? c : d
+
+Question : What is function ?
+Answer : A block of code which can be called in future
+
+
+---------------------------------- String Method ----------------------------------------------------
+
+1> replace : str.replace("this", "to this value")
+             but this will replace onmy first value which is encountered
+2> split : str.split("basis")
+           str.split("basis", 2) --> these fill tell only first two word from which basis is removed
+
+3> floor vs ceil
+    floor previous value : 3.5 -> 3
+    ceil : 3.5 -> 4
+
+
+
+
+
+------------------------------------------ Function ------------------------------------------------
+
+Question : What is function declaration ?
+Answer : we literally declare a function  calc()
+
+Question : What are anonymous function ?
+Answer : These are those function without name
+
+Question : What is function expression ?
+Answer : Those function which are stored inside the variable  and important is that these return
+         value  if there is no return statement it will return undefined
+         Question : How does it work ?
+         Answer : The thing is the reference of function is passed into variable
+                  and the function is invoked by that variable
+         Question : What is a name is given to anonymous function in function expression ?
+         Answer : it does not matter it will not work outside that function  it can be
+                  used inside
+
+
+Question : What is main difference between function expression and function declaration ?
+Answer : We can call function declaration before declaring
+         We cannot do that in function expression
+
+Question : What is arrow function ?
+Answer : Shorter form of function expression
+         const calcAge = (birthYear) => 2023 - Year
+
+
+
+
+----------------------------------------- Basic of Arrays ------------------------------------------
+
+Question : What is difference between
+           let arr = [1, 2, 3] and let arr = new Array(2) and let arr = new Array(3, 4)
+ 
+           1> let arr = [1, 2, 3] this is simple way of declaring
+           2> let arr = new Array(2) this will define size
+           3> let arr = new Array(2, 3, 4) this will
+
+
+Question : What if we make const array ?
+Answer : The value will be changes because const work for primitive  value
+
+
+Question : What are different method of Array ?
+Answer : a> push() - Add element to last of array
+                     and return length of latest array
+ 
+         b> unshift() - add element to beginning of array
+         c> pop() - remove the last element of array
+         d> shift() - remove removes first element of array
+
+
+
+
+----------------------------------- Basic of objects -------------------------------------------------
+
+Question : What is object ?
+Answer : Object store the data in the form of key and values
+
+Question : What is object literal ?
+Answer : let obj = {};
+
+
+Question : What is ways for extracting value from object ?
+Answer : by dot (.)
+         by []
+         Question : What is difference between . and [] ?
+         Answer :  In dot we have to use real property name
+ 
+                   we can do any expression in []
+                  let x = "name"
+                  obj["fist" + x]
+
+
+Question : How to add key in the object ?
+Answer : a> obj.keyName = "value";x`
+         b> onj[keyName] = "value";
+
+Question : Why template literal allow ternary operator but not if else ?
+Answer  : Because template literal : allow only evaluation of expression
+          but the if else if an statement
+
+
+
+
+
+
+------------------------------------ DOM ---------------------------------------------
+
+Question : How to select a element ?
+Answer : By document.querySelector(.)   . ->class
+                                        # ->id
+
+Question : What is DOM in JavaScript ?
+Answer : DOM - Document Object Model Is the structured representation of Html document
+         Dom helps JavaScript to access elements of html
+ 
+Question : How DOM Works ?
+Answer : DOM is created automatically by the browser
+         Document object is created at the top of tree which serve as the entry point to DOM
+         Actually the DOM is the part of browser API
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------- How JavaScript work ? ---------------------------------------
+
+Question : How JavaScript Work ?
+Answer : JavaScript Runtime environment contains 2 things : 1> Call Stack - Where actually a code run
+                                                            2> Heap - Where objects are stored
+
+        Before going to move we should know :
+        a> Compiles time language -  1> Source code - Portable machine code - Execution - Running of program
+        b> Interpreted language - Executes code line by line
+        c> JTI : Jut in time Interpreted :  Source code : Machine code (No portable code) - Running of program
+
+ 
+                              Code enters into the JS engine
+                                             |
+                                 Parsing : Syntax Checking
+                                             |
+                                 Compilation : Machine code
+                                             |
+                                         Execution
+
+Actually along with this JS runtime environment also contain : Web API : DOM Manipulation
+And also provide Callback Queue where all the callback function like onclick are added which wait for
+the call stack to be emptied
+
+
+
+Question : How JavaScript run code ?
+Answer : First When code is converted into machine code a global execution context is made
+         Global execution context - which is not inside a function means globally
+         then when it starts to run it will create separate execution context for each function
+
+Question : What is execution context made up of ?
+Answer : 1> Variable Environment
+         2> Arguments object : All the arguments which are passed to that function
+         3> Scope chain : Means will contain all the reference of variables which are above that function
+         4> this
+
+Question : Does arrow function have execution context ?
+Answer : Yes but it does not have his own this and Argument object
+
+
+After when all the function are executed all the function are removed from the call stack and
+only the global execution context remains waiting for the all callback function send by event loop
+
+|||||||||||||||           |||||||||||||||
+|             |           |             |
+|             |           |     Heap    |
+|  Call Stack |           |             |
+|             |           |||||||||||||||
+|             |
+|||||||||||||||
+     |
+     |                      ___________
+     |                     | Web API   |
+     |                     |___________|
+ __________________________
+| Call Back queue          |
+|__________________________|
+
+
+
+
+
+Question : What is scoping ?
+Answer : Range up to which we can access a variable
+        1> Global Scope : The variable declared here can be accessed everywhere
+        2> Block Scope :  The local scope within a {} but the main difference is that let and const are block scoped but
+                          var can be accessed outside that scope
+        3> Function Scope : The local scope within function
+
+
+
+
+Question : What is Hoisting ?
+Answer : Hoisting makes some variable accessible before they are declared
+
+                                 Hoisted                          Initial Value                               Scope
+         function declaration :  Yes                                Actual Function                           Block
+         var variables           Yes                               Undefined                                 Function
+         let and const           ❌No                              error (TDZ)                                block
+  function expression and arrow                          Depends upon if created with var or let
+
+
+Question : What is TDZ Temporal dead zone ?
+Answer : scope until which the let and const are not declared with value
+         and also for const : const cannot be assigned and redeclared
+
+Question : Why Hoisting ?
+Answer : For using function before actual declaration
+
+
+Question : Difference between let var and const >
+Answer :
+        let                                              |           var                                                      | const
+1> let cannot be re declared but can be updated            1> Var can do both it can be redeclared and re update              1> it cannot do both
+2> let is block scoped means if else block                 2> var is not block scope it ignores if else                       2> is also block scoped
+3> let is not window property                              3> var is window.x = x                                             3> const is also not window property
+4>                                                        4> var get value during memory execution
+
+
+
+
+Question : What is this ?
+Answer : this refers to things who is calling that function
+
+         Method : means inside the object➡️ this  = object that is calling the method
+         simple function :➡️ this = undefined
+         Arrow function :➡️ this  = < this of surrounding (lexical this) parent this >
+         Event listener :➡️this = < DOM element that handle is attached to >
+
+
+const obj = {
+   name : "kartik",
+   gree : () => {
+    console.log(this.name)
+ }
+}
+
+Jonas.greet() -- this will give undefined because we know arrow function do not have  his own this it support lexical
+                 this
+
+
+
+
+Question : Difference between arrow function and simple function ?
+Answer : 1> Arrow function does not have its own this it takes of parent
+         2> Arrow does not have arguments
+
+
+
+Question : Memory management in JavaScript ?
+Answer :  There are two types of variables 1> Primitive
+                                           2> Object
+
+Now the primitive are stored int the : Call Stack in execution context
+Now the non primitive are stored int the : Heap
+
+let obj = {
+ name : "kartik"
+}
+
+let temp = obj - this will refers to reference which is stored in the heap
+now if we do this
+
+temp.name = "Thakur" - this will change the obj name also  because of reference
+
+
+
+Question : What 🙎🔎is deep and shallow copy ?
+Answer : Shallow copy : We only copied first level see below example  (... spread)
+          Depp coy : make nested copy also  structuredClone()
+ 
+
+
+
+Question : What is spread operator ... ?
+Answer : ... spread operator take out array  the elements out of array and object
+         we cannot use it in `${...arr}` because multiple value are accepted in function
+          or when we built a new array and `${}` is used to evaluate expression
+
+Question : What is rest operator ?
+Answer : Rest do opposite of spread operator collect multiple element into single array
+
+Question : What is default in ... while making
+Answer : ...spread will make shallow copy but the thing it will make copy of all properties
+         but in this case
+ 
+         let  obj = {
+         name : "kartik",
+         arr : [1, 2],
+         }
+
+         but here it will make copy of refernce
+ 
+         let temp = {...obj}
+         if we do tem.arr.push(3)  - this will change obj array
+
+         🔎 Soution : Make deep copy
+
+
+Question : What is destructing ?
+Answer : It is breaking complex data structure into variable
+         let [a, , c] = arr;
+         but DE structuring make shallow copy
+
+
+
+Destructing of Object :
+
+Question : How to change key name while destructing object ?
+Answer : let [name : resturent_name] = obj;
+ 
+
+
+
+
+------------------------- ASYNC JAVA -----------------------------
+Question : Do callback function make async JavaScript ?
+Answer : No only callback do not make async JavaScript because map is also
+         call back function and it does not do async JavaScript
+
+
+Question : What is AJAX ?
+Answer : Asynchronous JavaScript and XML allow us to communicate with remote web server
+         in a Asynchronous way, with AJAX we can request data from web server dynamically
+
+
+
+Question : How async works ?
+
+You write: fetch('...').then(res => ...)
+
+⬇
+
+1. JS Engine:
+   Calls fetch(), sees it's async
+   ⟶ Passes it to Browser Web API
+
+2. Browser Web API:
+   Does the actual HTTP request in background
+
+3. Once done:
+   Places callback (res => ...) into Callback Queue
+
+4. Event Loop:
+   Waits for main thread to be free
+   ⟶ Moves callback to Call Stack
+
+5. JS Engine:
+   Executes the callback (res => ...)
+
+
+Question : What is API ?
+Answer : Application programming Interface if a piece of software that can be used by other piece of
+software to communicate with each other
+
+Question : What to use Ajax ?
+Answer : let request = new XMLTttpReuest(); old way
+         1> use have to open request.open('Get', URL)
+         2> use have to send request.send()
+         3> ue have to add event listner load request.addEventListener('load', function() {
+
+
+
+Question : What is callBack hell?
+Answer : It exution of nexted callBack to achieve asynchronous task in squence
+
+Question : What is promisies ?
+Answer : Promisie is a container for asynchronous returned value
+
+Question : What is use of promisies ?
+Answer : 1> We no longer need to depend upon callback function and event
+         2> Instead of nesting callback we can use promises chaning to escape
+            callback hell
+
+Question : What is lifecycle of promises ?
+Answer : Promisies work on async function so it goes on different state
+         1> Pending : Before future value is returned
+         2> Settled : Fulfilled and REJECTED
+
+        But these state will be calculated only once
+
+Question : How to use promise ?
+Answer : If promise is resolved the the reuslt will promise we have to extract that data
+         by using then
+ 
+         fetch().then(function(response) {
+              return response --> we have to convert into JSON format
+             so do
+             return response.JSON() --> Now this json is also async function so we have to do use
+                                        then
+         }).then(function(data) {
+              console.log(data);
+         })
+
+
+Question : What is promise chaning ?
+Answer : Istead of callback hell we have flat chain
+
+Question : How to handle if promise is rejected ?
+Answer : There are 2 wayss to handle
+         1> Pass another call back function in then
+            then(callback for resolved, callback for rejected)
+
+         2> By adding catch at the end of  then this will catch erro that occur at any then
+
+Question : What is finally ?
+Answer : No matter a promise is fulfilled or rejected this will be called
+
+
+
+Question : What is imediate inoveked function
+
+
+
+
+
+Question : What are clousers ?
+Answer : function binds itself with its lexical scope
+         every time a new clouser will be created with every function
+
+  
+ 
+       function foo() {
+          let a = 10;
+           function fun() {
+             a++;
+             console.log(a);
+           }
+
+         return foo;
+       }
+
+
+let help = foo();
+
+consloe.log(help()) ---> prints 11 becuase of closer
+
+
+Question : What is use of clouser ?
+Answer : To make something private becuse there is not concept of private in javaScript
+
+Question : What is disadvantage of clouser >
+Answer : Over consumption of memory 
+
+Question : What is memoisation ?
+Answer :   by doing couser
+
+         let dp = [] --> by declaring it globaly it can be changed by any one
+
+         so use clouser
+ 
+         function cl() {
+         let store = []
+ 
+         return function mult(a){
+           if(store[a]) {
+                 return store[a];
+           }
+
+           return store[a] = a * 5;
+
+         }
+
+        }
+
+ 
+
+Question : What is curring function in javaScript ?
+Answer : Convert multiple parameter into one parameter fucntion
+         or are those which take one perameter at a time
+
+          function sum(a) {
+            return function(b) {
+              return function(c) {
+                  // here this will have all argument becuase of clouser
+                  a + b + c;
+               }
+
+             }
+        }
+
+         sum(1)(2)(3);
+
+
+
+
+
+
+Question : Sysnc vs Async
+           Sync execute code line by line
+           Async does not wait for any one
+
+
+           JavaScript is single threaded and synchronus language
+
+
+
+
+Question : What setTimeOut and setIntervale are ?
+Answer :  these both will delay the execution of code
+
+          setTimeOut() will invoke function only 1 time
+          setIntrerval will invoke function every time
+
+
+Question : What setTimeout and setInterval return ?
+Answer : They return unique integer and used to clear that function that is not needed
+        by clearInterval of setInterval and cleartime for setTimeout
+
+Question : What is micorqueue ?
+Answer : It has more priority than callback function
+
+
+Question : How javaScript handle these async function ?
+Answer : 
+
+
+|||||||||||||||           |||||||||||||||
+|             |           |             |
+|             |           |     Heap    |
+|  Call Stack |           |             |
+|             |           |||||||||||||||
+|             |
+|||||||||||||||
+     |
+     |                                  ___________
+     |         [Event loop]            | Web API   |
+     |                                 |___________|
+
+___________________________________
+|                                 |
+|         microtask queue         |
+|_________________________________|
+ __________________________
+| Call Back queue          |
+|__________________________|
+
+
+
+
+Question : What are callback function ?
+Answer : To run multiple async task sync but it will create call back hell and inversion of code 
+
+
+Question : What are high order function ?
+Answer : Those function in which pass function as an argument or or or  return function 
+
+Question : What is callback function ?
+Answer : Callback are those function whcich are passed to another function 
+
+
+Question : What are promisies ?
+Answer : It is an object which is an async operation 
+         Object ---> status ---> Pending
+         |                       fullfilled
+         |                        rejected
+         |_____> Resopnse  
+
+          
+         Promise ---> .then (withdrwa saley)
+                 ---> .catch (rejected) 
+
+
+
+
