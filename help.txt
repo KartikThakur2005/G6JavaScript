@@ -614,4 +614,21 @@ Answer : It is an object which is an async operation
 
 
 
+let mypromise = new Promise((resolve, reject) => {
+setTimeout(() => {
+  resolve("Hello reolved";)
+}
+
+})
+
+
+
+Question : What will happedn in this case    .then().catch().then().catch()
+Answer : First by first is solved
+
+
+Question : What is promise api ?
+Answer : any : will gove AggregateError: All promises were rejected in case all are rejected 
+
+
 

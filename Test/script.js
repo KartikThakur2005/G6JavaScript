@@ -362,18 +362,71 @@
 // console.log(coll)
 
 
-let obj = {
-  name : "Kartik",
-  Salary : 100000,
-  work : "9 : 00 AM : 5 : 00 PM",
-  
-}
+// let obj = {
+//   name: "Kartik",
+//   Salary: 100000,
+//   work: "9 : 00 AM : 5 : 00 PM",
+// };
 
-let myPromise = new Promise((resolve, reject) => {
-  setTimeout(()=>{
-    reject("It is reolved");
-  }, 3000)
+// let myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(obj);
+//   }, 2000);
+// });
+
+// myPromise
+//   .then((res) => {
+//     console.log("Object received:", res);
+//     return res;
+//   })
+//   .then((res) => {
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         console.log("Accessing Salary after 3 seconds:", res.Salary);
+//         resolve(res); // forward the data
+//       }, 3000);
+//     });
+//   })
+//   .then((res) => {
+//     console.log("Name is:", res.name);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+
+// let promis1 = new Promise((resolve, reject)=> {
+//   resolve("Hello promise1 reolved")
+// })
+
+// let promis2 = new Promise((resolve, reject)=> {
+//   resolve("Hello promise2 reolved")
+// })
+
+// const finaldata = promis1.then((res) => { 
+//   console.log(res)
+//   return promis2
+//  }).then((res) => console.log(res))
+
+
+let promis1 = new Promise((resolve, reject)=> {
+  setTimeout(()=>{ reject("Hello promise1 reject")}, 1000)
 })
 
-myPromise.then((res)=> console.log(res))
-.catch((err)=> {console.log(err)})
+
+let promis2 = new Promise((resolve, reject)=> {
+  setTimeout(()=>{ reject("Hello promise2 reject")}, 2000)
+})
+
+let promis3 = new Promise((resolve, reject)=> {
+ setTimeout(()=>{ reject("Hello promise3 reject")}, 4000)
+})
+
+let promis4 = new Promise((resolve, reject)=> {
+ setTimeout(()=>{ reject("Hello promise4 reolved")}, 1000)
+})
+
+  //  Promise.all([promis1, promis2, promis3, promis4]).then((result)=>console.log(result )).catch((err)=>console.log(err))
+  //  Promise.allSettled([promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
+    Promise.race([promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
+    Promise.any([ promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
