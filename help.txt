@@ -628,7 +628,78 @@ Answer : First by first is solved
 
 
 Question : What is promise api ?
-Answer : any : will gove AggregateError: All promises were rejected in case all are rejected 
+Answer : any : will give AggregateError: All promises were rejected in case all are rejected 
+
+
+let promis1  = new Promise((resolve, reject) => {
+       setTimeout(()=>{
+        resolve("Promise1 is resolved");
+       }, 2000)
+    }) 
+
+    promis1.then((data)=>{console.log(data)}).catch((data)=>{
+    console.log(data)
+    }).then(()=>{
+      setTimeout(()=>{console.log("This is 2")}, 2000)
+    }).then(()=>{
+      console.log("I am third")
+    }, 1000)
+
+int this Case only intial promise if synchronus and other are not 
+
+
+This is answer 
+
+
+let promis1  = new Promise((resolve, reject) => {
+       setTimeout(()=>{
+        resolve("Promise1 is resolved");
+       }, 2000)
+    }) 
+
+    promis1.then((data)=> {
+       console.log(data);
+       return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve("Promise2 is resolved")
+          }, 2000)
+       })
+    }).then((data)=> {
+      console.log(data)
+      return  new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve("Promise3 is resolved")
+          }, 1000)
+       })
+    }).then((data)=>console.log(data));
 
 
 
+
+Question : What are promise api ?
+Answer : all --> if all resolved then all will print  
+                 if one is  reject then that is primted
+
+        allSettled --> all will be printed
+        race --> fastest reject or fastest resolve
+       
+        any ->  fastest reolved will be printed
+                else if all reject then erro will be printed AggregateError: All promises were rejected
+
+
+Question : What are async and await ?
+Answer : If we want a function to be asynchronus 
+         see in line 492 
+
+
+Question : What is fetch ?
+Answer : fetch is promise 
+
+Question : What are call, apply, bind ?
+Answer : these 3 works with (this) keyword 
+         these are immediate imvoked function
+
+        
+        call : we have to pass arguments normally
+        apply : here we have to pass arguments in array
+        bind : here we have to bind it to another variable 

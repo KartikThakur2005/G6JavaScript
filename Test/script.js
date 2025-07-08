@@ -409,24 +409,99 @@
 //  }).then((res) => console.log(res))
 
 
-let promis1 = new Promise((resolve, reject)=> {
-  setTimeout(()=>{ reject("Hello promise1 reject")}, 1000)
-})
+// let promis1 = new Promise((resolve, reject)=> {
+//   setTimeout(()=>{ reject("Hello promise1 reject")}, 2000)
+// })
 
 
-let promis2 = new Promise((resolve, reject)=> {
-  setTimeout(()=>{ reject("Hello promise2 reject")}, 2000)
-})
+// let promis2 = new Promise((resolve, reject)=> {
+//   setTimeout(()=>{ reject("Hello promise2 reject")}, 1000)
+// })
 
-let promis3 = new Promise((resolve, reject)=> {
- setTimeout(()=>{ reject("Hello promise3 reject")}, 4000)
-})
+// let promis3 = new Promise((resolve, reject)=> {
+//  setTimeout(()=>{ reject("Hello promise3 reject")}, 4000)
+// })
 
-let promis4 = new Promise((resolve, reject)=> {
- setTimeout(()=>{ reject("Hello promise4 reolved")}, 1000)
-})
+// let promis4 = new Promise((resolve, reject)=> {
+//  setTimeout(()=>{ reject("Hello promise4 reolved")},4000)
+// })
 
-  //  Promise.all([promis1, promis2, promis3, promis4]).then((result)=>console.log(result )).catch((err)=>console.log(err))
-  //  Promise.allSettled([promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
-    Promise.race([promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
-    Promise.any([ promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
+    //  Promise.all([promis1, promis2, promis3, promis4]).then((result)=>console.log(result )).catch((err)=>console.log(err))
+  // Promise.allSettled([promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
+  // Promise.race([6, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
+    // Promise.any([ promis1, promis2, promis3, promis4]).then((result)=>console.log(result)).catch((err)=>console.log(err));
+
+
+
+    // let promis1  = new Promise((resolve, reject) => {
+    //    setTimeout(()=>{
+    //     resolve("Promise1 is resolved");
+    //    }, 2000)
+    // }) 
+
+    // promis1.then((data)=>{console.log(data)}).catch((data)=>{
+    // console.log(data)
+    // }).then(()=>{
+    //   setTimeout(()=>{console.log("This is 2")}, 2000)
+    // }).then(()=>{
+    //   console.log("I am third")
+    // }, 1000)
+
+
+    // let promis1  = new Promise((resolve, reject) => {
+    //    setTimeout(()=>{
+    //     resolve("Promise1 is resolved");
+    //    }, 2000)
+    // }) 
+
+    // promis1.then((data)=> {
+    //    console.log(data);
+    //    return new Promise((resolve, reject)=>{
+    //       setTimeout(()=>{
+    //         resolve("Promise2 is resolved")
+    //       }, 2000)
+    //    })
+    // }).then((data)=> {
+    //   console.log(data)
+    //   return  new Promise((resolve, reject)=>{
+    //       setTimeout(()=>{
+    //         resolve("Promise3 is resolved")
+    //       }, 1000)
+    //    })
+    // }).then((data)=>console.log(data))
+
+
+
+  //   let promise  = (time, message) => {
+  //          return new Promise((resolve, reject)=>{
+  //             setTimeout(()=> {
+  //               resolve(message);
+  //             }, time)
+  //          })
+  //   }
+
+  // promise(3000, "Promise1").then((data) => {
+  //    console.log(data);
+  //    return promise(2000, "Promise2")
+  // }).then((data) => {
+  //    console.log(data);
+  //    return promise(1000, "Promise3")
+  // }).then((data)=>{
+  //      console.log(data);
+  // })
+
+
+  // async function apiData() {
+  //   let data = await fetch('https://dummyjson.com/users');
+  //   let res = await data.json();
+
+  //   console.log(res);
+  // }
+
+  // apiData();
+
+  
+
+  function assign() {
+    console.log(`Student `)
+  }
