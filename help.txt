@@ -703,3 +703,52 @@ Answer : these 3 works with (this) keyword
         call : we have to pass arguments normally
         apply : here we have to pass arguments in array
         bind : here we have to bind it to another variable 
+
+
+
+
+
+
+
+
+----------------------------------- EXPRESS ---------------------------------------------------
+
+1> Difference between npm i express save and no save
+  no save will not add it to any dependeny 
+
+2> Question : What is express generator ?
+Answer : It creates scaffolding of express app comes with jade 
+         view will have template engine(jade)
+         public - static files : purpose when we enter a url it will load all static files
+                                 
+
+3> Question : What is routing ?
+   Answer : When a client hit a specific endpoint like "/" so how to respond to that 
+
+4> Question : How to run all get post put delete
+              1> by app.all
+              2> by app.use 
+
+5> Question : What is difference between all and use ?
+   Answer : all - is path specific
+            use - is not path specific 
+
+
+6 > What is splat ? 
+    Answer : matches any path without any error  
+
+Question : What is routers specific middlewears ?
+Answer : we can pass callback function while doing app.get
+
+Questrion : How many type of middlewears
+           1> Applicatioon level :  We will globaly define a middlewear and this will run every time
+              when we do a call
+
+           2> Router level :  Like we want a specific middlewear in route like checking login at
+                              adding product at cart  
+              We can achive it by also creating it in new file 
+
+           3> Error Handling : Normal : 
+                               wildcard : Use ut in router level for best practice 
+                                          so that it is easy to tell the error came from which 
+                                          rotuer 
