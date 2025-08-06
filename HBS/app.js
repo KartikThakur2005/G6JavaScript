@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Home Page',
-        message: 'Welcome to HBS with Express!'
+        message: 'Hello!'
     });
 });
 
